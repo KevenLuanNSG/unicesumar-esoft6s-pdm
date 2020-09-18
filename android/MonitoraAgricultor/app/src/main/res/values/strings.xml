@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">MonitoraAgricultor</string>
+    <string name="app_name">Monitora</string>
+    <string name="intro_um">Tire sua dúvidas como os melhores profissionais</string>
+    <string name="intro_dois">Receba sugestões para o controle da sua safra em minutos</string>
+
+    <string name="next">Pŕoximo</string>
+    <string name="preview">Anterior</string>
 </resources>

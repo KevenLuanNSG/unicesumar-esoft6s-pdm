@@ -14,11 +14,11 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun mudarParaActivityDuvida() {
-        val intent = Intent(this, DuvidaActivity::class.java)
+        val intent = Intent(this, IntroUmActivity::class.java)
 
         Handler().postDelayed({
             intent.change()
-        }, 5000)
+        }, 2000)
     }
 
     fun Intent.change() {
