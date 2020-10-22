@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import org.jetbrains.anko.db.insert
 
 class DuvidaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +17,21 @@ class DuvidaActivity : AppCompatActivity() {
         val botaoConsultar = findViewById<Button>(R.id.consultar)
 
         botaoConsultar.setOnClickListener {
-            Toast.makeText(
-                applicationContext,
-                "Consultando... " + textoDuvida.text,
-                Toast.LENGTH_LONG
-            ).show()
+            database.use{
+                val idDuvida = insert("duvida",
+                    "duvida" to textoDuvida.text.toString()
+                )
+                if (idDuvida != -1L) {
+                    toast("Consultando...\n$idDuvida: ${textoDuvida.text.toString()}")
+                    textoDuvida.text.clear()
+                } else {
+                    toast("Erro ao inserir no banco de dados")
+                }
+            }
         }
+    }
+
+    private fun toast(mensagem: String) {
+        Toast.makeText(applicationContext,mensagem,Toast.LENGTH_LONG).show()
     }
 }
