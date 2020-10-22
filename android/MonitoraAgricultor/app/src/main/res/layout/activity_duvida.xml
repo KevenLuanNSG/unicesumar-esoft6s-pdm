@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".DuvidaActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="200dp"
+            android:src="@mipmap/logoazul" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duvida"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textFontWeight="200"
+            />
+
+        <EditText
+            android:id="@+id/duvida"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="@string/campo_duvida"
+            />
+
+        <Button
+            android:id="@+id/consultar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="@string/consultar"
+            />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,8 @@
 
     <string name="next">Pŕoximo</string>
     <string name="preview">Anterior</string>
+
+    <string name="duvida">Qual a sua Dúvida?</string>
+    <string name="campo_duvida">a folha de soja está manchada</string>
+    <string name="consultar">CONSULTAR</string>
 </resources>
