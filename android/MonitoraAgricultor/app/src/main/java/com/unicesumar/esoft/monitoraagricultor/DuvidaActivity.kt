@@ -1,5 +1,6 @@
 package com.unicesumar.esoft.monitoraagricultor
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,11 +25,17 @@ class DuvidaActivity : AppCompatActivity() {
                 if (idDuvida != -1L) {
                     toast("Consultando...\n$idDuvida: ${textoDuvida.text.toString()}")
                     textoDuvida.text.clear()
+                    listaDuvidas()
                 } else {
                     toast("Erro ao inserir no banco de dados")
                 }
             }
         }
+    }
+
+    private fun listaDuvidas() {
+        val intent = Intent(this, ListaDuvidaActivity::class.java)
+        startActivity(intent)
     }
 
     private fun toast(mensagem: String) {
