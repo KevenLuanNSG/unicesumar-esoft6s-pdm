@@ -1,7 +1,9 @@
 package com.unicesumar.esoft.monitoraagricultor
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_lista_duvida.*
 import org.jetbrains.anko.db.parseList
@@ -26,14 +28,20 @@ class ListaDuvidaActivity : AppCompatActivity() {
                                            duvida: String ->
                     Duvida(id, duvida)
                 }
-
                 var listaDuvidas = parseList(parser)
 
                 duvidasAdapter.clear()
-
                 val duvidasTexto = listaDuvidas.map { it.duvida }
                 duvidasAdapter.addAll(duvidasTexto)
             }
         }
+
+        list_view_duvidas.setOnItemClickListener { parent, view, position, id ->
+            Log.d("Debug", "${position}, ${id}")
+
+            val intent = Intent(this, LocalizacaoActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
